@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleke Migrate — move to your new phone</title>
+  <meta name="description" content="Send contacts, photos, and files from your old Android phone to your new one over Wi-Fi. Nothing goes to the cloud." />
+  <meta name="theme-color" content="#0a0a0c" />
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <img class="hero__icon" src="assets/icon.svg" alt="Sleke Migrate" width="88" height="88" />
+      <h1 class="hero__title">Sleke Migrate</h1>
+      <p class="hero__tagline">Send your contacts, photos, and files straight to your new phone over Wi-Fi. Nothing goes to the cloud.</p>
+
+      <a class="download" id="download" href="https://github.com/snvd-io/sleke-migrate/releases/latest/download/sleke-migrate.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v12" /><path d="m7 12 5 5 5-5" /><path d="M5 21h14" />
+        </svg>
+        Download the app
+      </a>
+
+      <p class="meta" id="meta">Latest release · Android 9 and newer
+        <span class="meta__checksum" id="checksum"></span>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Install it</h2>
+      <ol class="steps">
+        <li><span class="num">1</span><div><b>Open the file you downloaded</b><p>Tap the downloaded <code>sleke-migrate.apk</code> from your notifications or Downloads.</p></div></li>
+        <li><span class="num">2</span><div><b>Allow this one install</b><p>Android will ask to allow installing from your browser. Tap <b>Settings</b>, turn on <b>Allow from this source</b>, then go back.</p></div></li>
+        <li><span class="num">3</span><div><b>Tap Install</b><p>Open the app and follow the steps to send your data.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>How it works</h2>
+      <ul class="steps">
+        <li><span class="num num--dot">→</span><div><b>Connect to the new phone</b><p>On the new phone, open the setup wizard and choose transfer from another phone.</p></div></li>
+        <li><span class="num num--dot">→</span><div><b>Scan the code</b><p>Point this phone at the pairing code to lock onto the new device.</p></div></li>
+        <li><span class="num num--dot">→</span><div><b>Review and send</b><p>Choose your contacts and photos, then send them directly.</p></div></li>
+      </ul>
+    </section>
+
+    <p class="privacy"><b>Private by design.</b> Your data transfers phone-to-phone over your local Wi-Fi, with the connection pinned to the new device. It is never uploaded to a server.</p>
+
+    <footer>
+      <p>Runs on the old phone you are moving from · Android 9+<br />
+      <a href="https://github.com/snvd-io/sleke-migrate/releases">All releases</a> · <a href="https://github.com/snvd-io/sleke-migrate">About</a></p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var REPO = "snvd-io/sleke-migrate";
+      function fmtSize(bytes) {
+        if (!bytes) return null;
+        var mb = bytes / (1024 * 1024);
+        return mb.toFixed(1) + " MB";
+      }
+      function fmtDate(iso) {
+        try {
+          return new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+        } catch (e) { return null; }
+      }
+      fetch("https://api.github.com/repos/" + REPO + "/releases/latest")
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (rel) {
+          var apk = (rel.assets || []).filter(function (a) { return a.name === "sleke-migrate.apk"; })[0];
+          var bits = [];
+          if (rel.tag_name) bits.push("Version " + rel.tag_name.replace(/^v/, ""));
+          var d = fmtDate(rel.published_at); if (d) bits.push(d);
+          var s = apk && fmtSize(apk.size); if (s) bits.push(s);
+          bits.push("Android 9+");
+          document.getElementById("meta").firstChild.textContent = bits.join(" · ") + " ";
+        })
+        .catch(function () { /* keep the static fallback text and working button */ });
+
+      fetch("https://github.com/" + REPO + "/releases/latest/download/sleke-migrate.apk.sha256")
+        .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+        .then(function (t) {
+          var hash = (t.trim().split(/\s+/)[0] || "");
+          if (hash) document.getElementById("checksum").textContent = "SHA-256 " + hash;
+        })
+        .catch(function () {});
+    })();
+  </script>
+</body>
+</html>
