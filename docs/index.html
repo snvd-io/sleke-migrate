@@ -4,89 +4,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sleke Migrate — move to your new phone</title>
-  <meta name="description" content="Send contacts, photos, and files from your old Android phone to your new one over Wi-Fi. Nothing goes to the cloud." />
+  <meta name="description" content="Send contacts, photos, and files from your old Android phone to your new one over Wi-Fi. Nothing goes online." />
   <meta name="theme-color" content="#0a0a0c" />
+  <meta property="og:title" content="Sleke Migrate" />
+  <meta property="og:description" content="Move contacts, photos, and files to your new phone over Wi-Fi. Phone to phone, nothing online." />
+  <meta property="og:image" content="https://snvd-io.github.io/sleke-migrate/assets/welcome.png" />
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <section class="hero">
-      <img class="hero__icon" src="assets/icon.svg" alt="Sleke Migrate" width="88" height="88" />
-      <h1 class="hero__title">Sleke Migrate</h1>
-      <p class="hero__tagline">Send your contacts, photos, and files straight to your new phone over Wi-Fi. Nothing goes to the cloud.</p>
+  <div class="rings" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
 
-      <a class="download" id="download" href="https://github.com/snvd-io/sleke-migrate/releases/latest/download/sleke-migrate.apk">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 3v12" /><path d="m7 12 5 5 5-5" /><path d="M5 21h14" />
+  <main class="page">
+    <header class="hero">
+      <div class="brand">
+        <img src="assets/icon.svg" alt="" width="44" height="44" />
+        <span>Sleke Migrate</span>
+      </div>
+
+      <h1>Move everything to your new phone.</h1>
+      <p class="lede">Contacts, photos, videos, and files go straight from this phone to the new one over Wi-Fi. Nothing is uploaded anywhere.</p>
+
+      <a class="download" href="https://github.com/snvd-io/sleke-migrate/releases/latest/download/sleke-migrate.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4v11" /><path d="m7.5 11 4.5 4.5 4.5-4.5" /><path d="M5 20h14" />
         </svg>
-        Download the app
+        Download for Android
       </a>
+      <p class="release" id="release">Latest release for Android 9 and newer.</p>
 
-      <p class="meta" id="meta">Latest release · Android 9 and newer
-        <span class="meta__checksum" id="checksum"></span>
-      </p>
-    </section>
+      <figure class="phone">
+        <img src="assets/welcome.png" alt="The Sleke Migrate welcome screen on an Android phone, with a Start button." width="485" height="1080" />
+      </figure>
+    </header>
 
-    <section class="card">
-      <h2>Install it</h2>
-      <ol class="steps">
-        <li><span class="num">1</span><div><b>Open the file you downloaded</b><p>Tap the downloaded <code>sleke-migrate.apk</code> from your notifications or Downloads.</p></div></li>
-        <li><span class="num">2</span><div><b>Allow this one install</b><p>Android will ask to allow installing from your browser. Tap <b>Settings</b>, turn on <b>Allow from this source</b>, then go back.</p></div></li>
-        <li><span class="num">3</span><div><b>Tap Install</b><p>Open the app and follow the steps to send your data.</p></div></li>
+    <p class="aside">Install this on the <strong>old</strong> phone, the one you are moving away from. The new phone shows a pairing code inside the Sleke setup wizard.</p>
+
+    <section class="section" aria-labelledby="install">
+      <h2 id="install">Install it</h2>
+      <ol class="route">
+        <li>
+          <h3>Open the downloaded file</h3>
+          <p>Tap <span class="file">sleke-migrate.apk</span> in your notifications or in Downloads.</p>
+        </li>
+        <li>
+          <h3>Allow this one install</h3>
+          <p>Android asks before installing from a browser. Tap Settings, turn on Allow from this source, then go back.</p>
+        </li>
+        <li>
+          <h3>Tap Install, then open the app</h3>
+          <p>It walks you through the rest.</p>
+        </li>
       </ol>
     </section>
 
-    <section class="card">
-      <h2>How it works</h2>
-      <ul class="steps">
-        <li><span class="num num--dot">→</span><div><b>Connect to the new phone</b><p>On the new phone, open the setup wizard and choose transfer from another phone.</p></div></li>
-        <li><span class="num num--dot">→</span><div><b>Scan the code</b><p>Point this phone at the pairing code to lock onto the new device.</p></div></li>
-        <li><span class="num num--dot">→</span><div><b>Review and send</b><p>Choose your contacts and photos, then send them directly.</p></div></li>
-      </ul>
+    <section class="section section--split" aria-labelledby="how">
+      <div>
+        <h2 id="how">How the move works</h2>
+        <ol class="route">
+          <li>
+            <h3>Start setup on the new phone</h3>
+            <p>Choose to bring data from another phone. It shows a pairing code.</p>
+          </li>
+          <li>
+            <h3>Scan the code with this phone</h3>
+            <p>The two phones lock onto each other. No account, no sign-in.</p>
+          </li>
+          <li>
+            <h3>Pick what to send</h3>
+            <p>Contacts, whole albums, or folders. Keep both phones awake and on the same Wi-Fi while it sends.</p>
+          </li>
+        </ol>
+      </div>
+      <figure class="phone phone--small">
+        <img src="assets/scan.png" alt="The scan screen in Sleke Migrate, asking you to scan the code on your new phone." width="485" height="1080" loading="lazy" />
+      </figure>
     </section>
 
-    <p class="privacy"><b>Private by design.</b> Your data transfers phone-to-phone over your local Wi-Fi, with the connection pinned to the new device. It is never uploaded to a server.</p>
+    <section class="section" aria-labelledby="privacy">
+      <h2 id="privacy">Private by design</h2>
+      <p class="prose">Your data travels phone to phone over your own Wi-Fi. Before anything is sent, the connection is pinned to the exact device that showed the code, so nothing can be sent to a stranger's phone. There is no server in between and nothing to delete afterwards.</p>
+    </section>
+
+    <section class="section" aria-labelledby="verify">
+      <h2 id="verify">Check your download</h2>
+      <p class="prose">Every release ships with a checksum. If the file you downloaded matches this SHA-256, it is the file we published.</p>
+      <p class="hash" id="checksum">Fetching the checksum for the latest release…</p>
+    </section>
 
     <footer>
-      <p>Runs on the old phone you are moving from · Android 9+<br />
-      <a href="https://github.com/snvd-io/sleke-migrate/releases">All releases</a> · <a href="https://github.com/snvd-io/sleke-migrate">About</a></p>
+      <p><a href="https://github.com/snvd-io/sleke-migrate/releases">All releases</a> <a href="https://github.com/snvd-io/sleke-migrate">Source and license</a></p>
     </footer>
   </main>
 
   <script>
     (function () {
       var REPO = "snvd-io/sleke-migrate";
-      function fmtSize(bytes) {
-        if (!bytes) return null;
-        var mb = bytes / (1024 * 1024);
-        return mb.toFixed(1) + " MB";
+      var release = document.getElementById("release");
+      var checksum = document.getElementById("checksum");
+      var CHECKSUM_FALLBACK = "The checksum is in the sleke-migrate.apk.sha256 file next to each release.";
+
+      function megabytes(bytes) {
+        return bytes ? (bytes / (1024 * 1024)).toFixed(0) + " MB" : null;
       }
-      function fmtDate(iso) {
+      function longDate(iso) {
         try {
-          return new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+          return new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
         } catch (e) { return null; }
       }
+
       fetch("https://api.github.com/repos/" + REPO + "/releases/latest")
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (rel) {
           var apk = (rel.assets || []).filter(function (a) { return a.name === "sleke-migrate.apk"; })[0];
-          var bits = [];
-          if (rel.tag_name) bits.push("Version " + rel.tag_name.replace(/^v/, ""));
-          var d = fmtDate(rel.published_at); if (d) bits.push(d);
-          var s = apk && fmtSize(apk.size); if (s) bits.push(s);
-          bits.push("Android 9+");
-          document.getElementById("meta").firstChild.textContent = bits.join(" · ") + " ";
+          var version = rel.tag_name ? rel.tag_name.replace(/^v/, "") : null;
+          var date = longDate(rel.published_at);
+          var size = apk && megabytes(apk.size);
+          var parts = [];
+          if (version) parts.push("Version " + version);
+          if (date) parts.push("released " + date);
+          var sentence = parts.join(", ") + ".";
+          if (size) sentence += " " + size + ".";
+          sentence += " Android 9 and newer.";
+          release.textContent = sentence;
+          var hash = ((rel.body || "").match(/\b[0-9a-f]{64}\b/) || [])[0];
+          checksum.textContent = hash || CHECKSUM_FALLBACK;
         })
-        .catch(function () { /* keep the static fallback text and working button */ });
-
-      fetch("https://github.com/" + REPO + "/releases/latest/download/sleke-migrate.apk.sha256")
-        .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
-        .then(function (t) {
-          var hash = (t.trim().split(/\s+/)[0] || "");
-          if (hash) document.getElementById("checksum").textContent = "SHA-256 " + hash;
-        })
-        .catch(function () {});
+        .catch(function () {
+          checksum.textContent = CHECKSUM_FALLBACK;
+        });
     })();
   </script>
 </body>
