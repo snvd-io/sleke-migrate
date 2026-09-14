@@ -22,7 +22,7 @@ Requires Android 9 (Pie) or newer.
 
 ## Privacy
 
-Your data transfers phone-to-phone over your local Wi-Fi. The connection is pinned to the new device before anything is sent, and nothing is uploaded to a server.
+Selected content transfers phone-to-phone over your local Wi-Fi. See the [Sleke Migrate privacy policy](https://snvd-io.github.io/sleke-migrate/privacy.html) for permissions, platform-specific diagnostics, and deletion choices.
 
 ## Verify your download
 
