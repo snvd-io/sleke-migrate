@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sleke Migrate — move to your new phone</title>
-  <meta name="description" content="Send contacts, photos, and files from your old Android phone to your new one over Wi-Fi. Nothing goes online." />
+  <meta name="description" content="Move selected contacts, photos, videos, and files from your old Android phone to your new SLEKE phone over local Wi-Fi." />
   <meta name="theme-color" content="#0a0a0c" />
   <meta property="og:title" content="Sleke Migrate" />
-  <meta property="og:description" content="Move contacts, photos, and files to your new phone over Wi-Fi. Phone to phone, nothing online." />
+  <meta property="og:description" content="Move selected contacts, photos, videos, and files to your new SLEKE phone over local Wi-Fi." />
   <meta property="og:image" content="https://snvd-io.github.io/sleke-migrate/assets/welcome.png" />
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,48 +20,35 @@
     <span></span><span></span><span></span><span></span>
   </div>
 
-  <main class="page">
-    <header class="hero">
-      <div class="brand">
+  <div class="site-frame">
+    <nav class="site-nav" aria-label="Site">
+      <a class="brand" href="./" aria-current="page">
         <img src="assets/icon.svg" alt="" width="44" height="44" />
         <span>Sleke Migrate</span>
-      </div>
-
-      <h1>Move everything to your new phone.</h1>
-      <p class="lede">Contacts, photos, videos, and files go straight from this phone to the new one over Wi-Fi. Nothing is uploaded anywhere.</p>
-
-      <a class="download" href="https://github.com/snvd-io/sleke-migrate/releases/latest/download/sleke-migrate.apk">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 4v11" /><path d="m7.5 11 4.5 4.5 4.5-4.5" /><path d="M5 20h14" />
-        </svg>
-        Download for Android
       </a>
-      <p class="release" id="release">Latest release for Android 9 and newer.</p>
+      <a class="nav-link" href="privacy.html">Privacy policy</a>
+    </nav>
+
+  <main class="page" id="main-content">
+    <header class="hero">
+      <div class="hero-copy">
+        <h1>Move what matters to your new phone.</h1>
+        <p class="lede">Bring your contacts, photos, videos, and files over from your old Android phone. Your selected data goes directly to the new phone on the same Wi-Fi.</p>
+        <p class="hero-note">Install Sleke Migrate on the phone you’re moving from. During setup, your new SLEKE phone shows the code you’ll scan.</p>
+
+        <a class="download" href="https://github.com/snvd-io/sleke-migrate/releases/latest/download/sleke-migrate.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 4v11" /><path d="m7.5 11 4.5 4.5 4.5-4.5" /><path d="M5 20h14" />
+          </svg>
+          Download for Android
+        </a>
+        <p class="release" id="release">Latest release for Android 9 and newer.</p>
+      </div>
 
       <figure class="phone">
         <img src="assets/welcome.png" alt="The Sleke Migrate welcome screen on an Android phone, with a Start button." width="485" height="1080" />
       </figure>
     </header>
-
-    <p class="aside">Install this on the <strong>old</strong> phone, the one you are moving away from. The new phone shows a pairing code inside the Sleke setup wizard.</p>
-
-    <section class="section" aria-labelledby="install">
-      <h2 id="install">Install it</h2>
-      <ol class="route">
-        <li>
-          <h3>Open the downloaded file</h3>
-          <p>Tap <span class="file">sleke-migrate.apk</span> in your notifications or in Downloads.</p>
-        </li>
-        <li>
-          <h3>Allow this one install</h3>
-          <p>Android asks before installing from a browser. Tap Settings, turn on Allow from this source, then go back.</p>
-        </li>
-        <li>
-          <h3>Tap Install, then open the app</h3>
-          <p>It walks you through the rest.</p>
-        </li>
-      </ol>
-    </section>
 
     <section class="section section--split" aria-labelledby="how">
       <div>
@@ -86,9 +73,28 @@
       </figure>
     </section>
 
+    <section class="section" aria-labelledby="install">
+      <h2 id="install">Install it on your old phone</h2>
+      <ol class="route">
+        <li>
+          <h3>Open the downloaded file</h3>
+          <p>Tap <span class="file">sleke-migrate.apk</span> in your notifications or in Downloads.</p>
+        </li>
+        <li>
+          <h3>Allow this one install</h3>
+          <p>Android asks before installing from a browser. Tap Settings, turn on Allow from this source, then go back.</p>
+        </li>
+        <li>
+          <h3>Tap Install, then open the app</h3>
+          <p>It walks you through the rest.</p>
+        </li>
+      </ol>
+    </section>
+
     <section class="section" aria-labelledby="privacy">
       <h2 id="privacy">Private by design</h2>
-      <p class="prose">Your data travels phone to phone over your own Wi-Fi. Before anything is sent, the connection is pinned to the exact device that showed the code, so nothing can be sent to a stranger's phone. There is no server in between and nothing to delete afterwards.</p>
+      <p class="prose">The contacts, photos, and files you choose travel directly to the receiving phone over local Wi-Fi. The connection is tied to the device that showed the pairing code. The transfer does not create a cloud copy.</p>
+      <p class="prose"><a class="text-link" href="privacy.html">Read the Sleke Migrate privacy policy</a> for permissions, diagnostics, and deletion choices.</p>
     </section>
 
     <section class="section" aria-labelledby="verify">
@@ -98,9 +104,10 @@
     </section>
 
     <footer>
-      <p><a href="https://github.com/snvd-io/sleke-migrate/releases">All releases</a> <a href="https://github.com/snvd-io/sleke-migrate">Source and license</a></p>
+      <p><a href="https://github.com/snvd-io/sleke-migrate/releases">All releases</a> <a href="https://github.com/snvd-io/sleke-migrate">Source and license</a> <a href="privacy.html">Privacy policy</a></p>
     </footer>
   </main>
+  </div>
 
   <script>
     (function () {

@@ -6,7 +6,6 @@
   --ring: rgba(255, 255, 255, 0.055);
   --accent: #7c4dff;
   --accent-deep: #5a30e0;
-  --accent-glow: rgba(124, 77, 255, 0.45);
   --display: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
   --text: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --measure: 34rem;
@@ -19,6 +18,7 @@ html {
   -webkit-text-size-adjust: 100%;
   background: var(--bg);
   overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,6 +31,8 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: clip;
 }
+
+::selection { background: var(--accent); color: #fff; }
 
 .rings {
   position: absolute;
@@ -55,21 +57,31 @@ body {
 .rings span:nth-child(3) { --d: 1120px; }
 .rings span:nth-child(4) { --d: 1500px; }
 
-.page {
+.site-frame {
   position: relative;
   z-index: 1;
-  max-width: 44rem;
+  max-width: 72rem;
   margin: 0 auto;
-  padding: 40px var(--gutter) 72px;
+  padding: 32px var(--gutter) 72px;
 }
 
-.hero {
+.site-nav {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
+  gap: 24px;
 }
-.hero > * { max-width: 100%; }
+
+.page { margin-top: 64px; }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(250px, 0.9fr);
+  align-items: center;
+  gap: clamp(32px, 7vw, 96px);
+}
+
+.hero-copy { min-width: 0; }
 
 .brand {
   display: inline-flex;
@@ -79,8 +91,27 @@ body {
   font-size: 1rem;
   letter-spacing: 0.005em;
   color: var(--ink);
+  text-decoration: none;
 }
 .brand img { border-radius: 12px; }
+.brand:focus-visible, .nav-link:focus-visible, .text-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.nav-link, .text-link {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+}
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+  font-size: 0.9375rem;
+}
+.nav-link:hover, .text-link:hover { color: #cbb7ff; }
 
 h1 {
   font-family: var(--display);
@@ -88,16 +119,25 @@ h1 {
   font-size: clamp(2.25rem, 9vw, 3.75rem);
   line-height: 1.02;
   letter-spacing: -0.028em;
-  max-width: 13ch;
-  margin-top: 40px;
+  max-width: 12ch;
   text-wrap: balance;
 }
 
 .lede {
   color: var(--muted);
-  max-width: min(30rem, 100%);
+  max-width: 35rem;
   margin-top: 18px;
   font-size: 1.125rem;
+  text-wrap: pretty;
+}
+
+.hero-note {
+  max-width: 34rem;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 1rem;
   text-wrap: pretty;
 }
 
@@ -108,12 +148,12 @@ h1 {
   margin-top: 34px;
   padding: 17px 30px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #8a5dff 0%, var(--accent) 55%, var(--accent-deep) 100%);
+  background: linear-gradient(180deg, #7c4dff 0%, #7040ec 55%, #5529d6 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1.125rem;
   text-decoration: none;
-  box-shadow: 0 14px 40px -10px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  box-shadow: 0 14px 32px -12px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 140ms ease;
 }
 .download svg { width: 22px; height: 22px; }
@@ -125,7 +165,7 @@ h1 {
 @media (hover: hover) and (pointer: fine) {
   .download:hover {
     transform: translateY(-1px);
-    box-shadow: 0 18px 46px -10px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    box-shadow: 0 18px 38px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   }
 }
 
@@ -137,12 +177,12 @@ h1 {
 }
 
 .phone {
-  margin-top: 56px;
-  width: min(300px, 64vw);
+  width: min(340px, 100%);
+  margin: 0 auto;
   padding: 10px;
   border-radius: 40px;
   background: #16161b;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 90px -30px rgba(0, 0, 0, 0.9), 0 0 120px -30px var(--accent-glow);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 90px -30px rgba(0, 0, 0, 0.9);
 }
 .phone img {
   display: block;
@@ -158,22 +198,16 @@ h1 {
 }
 .phone--small img { border-radius: 25px; }
 
-.aside {
-  margin: 56px auto 0;
-  max-width: var(--measure);
-  padding: 18px 22px;
-  border-left: 3px solid var(--accent);
-  color: var(--ink);
-  font-size: 1rem;
-  text-wrap: pretty;
-}
-.aside strong { font-weight: 600; }
-
 .section {
   margin-top: 64px;
   padding-top: 40px;
   border-top: 1px solid var(--line);
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.section--split { max-width: 50rem; }
 
 h2 {
   font-family: var(--display);
@@ -280,6 +314,9 @@ h3 {
 
 footer {
   margin-top: 72px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 44rem;
   padding-top: 28px;
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -299,6 +336,30 @@ footer a {
 footer a:hover, footer a:focus-visible { border-bottom-color: var(--accent); }
 footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+.legal { max-width: 44rem; margin: 64px auto 0; }
+.legal h1 { max-width: none; }
+.legal .lede { max-width: 42rem; }
+.legal .updated { margin-top: 20px; color: var(--muted); font-size: 0.9375rem; }
+.legal .section { max-width: none; }
+.legal .section p, .legal .section li { color: var(--muted); }
+.legal .section p { margin-top: 16px; }
+.legal .section ul { margin: 16px 0 0 24px; }
+.legal .section li { padding-left: 4px; margin-top: 10px; }
+.legal .section strong { color: var(--ink); font-weight: 600; }
+.legal a { color: var(--ink); text-underline-offset: 4px; }
+.legal a:hover { color: #cbb7ff; }
+.legal a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+@media (max-width: 760px) {
+  .site-frame { padding-top: 24px; }
+  .page { margin-top: 48px; }
+  .page.legal { margin-top: 48px; }
+  .hero { display: flex; flex-direction: column; align-items: stretch; gap: 48px; }
+  .hero h1 { max-width: 14ch; }
+  .hero .phone { width: min(270px, 78vw); }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .download { transition: none; }
 }
