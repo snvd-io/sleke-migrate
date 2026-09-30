@@ -2,7 +2,7 @@
 
 Move your contacts, photos, and files from your old Android phone to your new one — directly over Wi-Fi. Nothing goes to the cloud.
 
-**[⬇ Download the app](https://snvd-io.github.io/sleke-migrate/)**
+**[⬇ Download the app](https://migrate.sleke.io/)**
 
 You install this app on the **old phone** you are moving away from. The new phone runs the Sleke setup wizard.
 
@@ -14,7 +14,7 @@ You install this app on the **old phone** you are moving away from. The new phon
 
 ## Install
 
-1. Download the APK from the [download page](https://snvd-io.github.io/sleke-migrate/) or the [latest release](https://github.com/snvd-io/sleke-migrate/releases/latest).
+1. Download the APK from the [download page](https://migrate.sleke.io/) or the [latest release](https://github.com/snvd-io/sleke-migrate/releases/latest).
 2. Open the file. Android will ask to allow installing from your browser — turn on **Allow from this source**, then go back.
 3. Tap **Install**.
 
@@ -22,7 +22,7 @@ Requires Android 9 (Pie) or newer.
 
 ## Privacy
 
-Selected content transfers phone-to-phone over your local Wi-Fi. See the [Sleke Migrate privacy policy](https://snvd-io.github.io/sleke-migrate/privacy.html) for permissions, platform-specific diagnostics, and deletion choices.
+Selected content transfers phone-to-phone over your local Wi-Fi. See the [Sleke Migrate privacy policy](https://migrate.sleke.io/privacy) for permissions, platform-specific diagnostics, and deletion choices.
 
 ## Verify your download
 
