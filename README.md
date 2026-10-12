@@ -9,12 +9,13 @@
 
 <p align="center">
   <a href="https://migrate.sleke.io/"><img alt="Download for Android" src="https://img.shields.io/badge/Download_for_Android-000000?style=for-the-badge&logo=android&logoColor=48FF00"></a>
-  <img alt="iPhone: coming soon to the App Store" src="https://img.shields.io/badge/iPhone-coming_soon-767676?style=for-the-badge">
+  <a href="https://apps.apple.com/app/sleke-migrate/id6812092885"><img alt="Download on the App Store" src="https://img.shields.io/badge/Download_on_the_App_Store-000000?style=for-the-badge&logo=apple&logoColor=white"></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/snvd-io/sleke-migrate/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/snvd-io/sleke-migrate?style=flat-square&label=release&labelColor=000000&color=EFEFEF"></a>
   <img alt="Android 9 or newer" src="https://img.shields.io/badge/Android-9%20or%20newer-EFEFEF?style=flat-square&labelColor=000000">
+  <img alt="iOS 16 or newer" src="https://img.shields.io/badge/iOS-16%20or%20newer-EFEFEF?style=flat-square&labelColor=000000">
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-EFEFEF?style=flat-square&labelColor=000000"></a>
 </p>
 
@@ -26,7 +27,7 @@ You install it on your **old phone**. Your new SLEKE. phone sends you here durin
 
 | | Where | What you do |
 |:-:|:--|:--|
-| **1** | Old phone | Install SLEKE. Migrate from [migrate.sleke.io](https://migrate.sleke.io/). |
+| **1** | Old phone | Install SLEKE. Migrate: on Android from [migrate.sleke.io](https://migrate.sleke.io/), on iPhone from the [App Store](https://apps.apple.com/app/sleke-migrate/id6812092885). |
 | **2** | New SLEKE. phone | Setup shows a pairing code. Scan it with SLEKE. Migrate to connect the phones. |
 | **3** | Old phone | Pick contacts, whole albums or folders, then send. Keep both phones awake and on the same Wi-Fi until it finishes. |
 
@@ -34,11 +35,15 @@ You install it on your **old phone**. Your new SLEKE. phone sends you here durin
 
 1. On your old phone, open [migrate.sleke.io](https://migrate.sleke.io/) and tap **Download for Android**, or get `sleke-migrate.apk` from the [latest release](https://github.com/snvd-io/sleke-migrate/releases/latest).
 2. Android asks before installing from a browser. Tap **Settings**, turn on **Allow from this source**, then go back. You can turn it off again afterwards.
-3. Tap **Install**. If Play Protect offers to scan the app, let it scan. Then open SLEKE. Migrate and tap **Start**.
+3. Tap **Install**. If Play Protect offers to scan the app, let it scan. Then open SLEKE. Migrate and tap **Send from this phone**.
 
 Needs Android 9 or newer, with both phones on the same Wi-Fi.
 
-**On an iPhone?** SLEKE. Migrate for iPhone is on its way to the App Store. Until then, your new SLEKE. phone can finish setup without it.
+## Install on iPhone
+
+Get SLEKE. Migrate from the [App Store](https://apps.apple.com/app/sleke-migrate/id6812092885), open it and tap **Send from this phone**. When it asks for access to your local network, allow it, so it can reach your new phone.
+
+Needs iOS 16 or newer, on an iPhone or iPad, with both phones on the same Wi-Fi.
 
 ## Private by design
 
